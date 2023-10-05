@@ -4,6 +4,7 @@ import (
 	"fmt"
 )
 
+// The function reverseWords takes a string as input and returns the string with the words reversed.
 func reverseWords(str string) string {
 	var rev string
 	var word string
