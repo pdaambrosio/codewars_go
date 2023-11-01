@@ -5,6 +5,8 @@ import (
 	"math"
 )
 
+// Function SquareOrSquareRoot returns a new array (list) of the squares of the numbers in the input array (list) 
+// if the square root is an integer; otherwise, returns the square root of the number.
 func SquareOrSquareRoot(arr []int) []int {
 	var result []int
 	for _, num := range arr {
