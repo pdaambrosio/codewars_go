@@ -1,0 +1,3 @@
+module feastOfManyBeasts
+
+go 1.21.4
