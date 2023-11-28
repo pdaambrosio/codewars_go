@@ -4,6 +4,8 @@ import (
 	"fmt"
 )
 
+// The function takes in an array of integers and returns an array containing the count of positive
+// numbers and the sum of negative numbers.
 func CountPositivesSumNegatives(numbers []int) []int {
 	var count int = 0
 	var sum int = 0
