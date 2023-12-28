@@ -9,9 +9,9 @@ import (
 func BinToDec(bin string) int {
 	if bin, err := strconv.ParseInt(bin, 2, 64); err == nil {
 		return int(bin)
-	} else {
-		return 0
 	}
+
+	return 0
 }
 
 func main() {
