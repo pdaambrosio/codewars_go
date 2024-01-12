@@ -18,3 +18,14 @@ func main() {
 	fmt.Println(GetMiddle("testing"))
 	fmt.Println(GetMiddle("middle"))
 }
+
+/*
+The best solution in CodeWars:
+	package kata
+
+	func GetMiddle(s string) string {
+		n := len(s)
+		if n==0 {return s}
+		return s[(n - 1) / 2 : n / 2 + 1]
+	}
+*/
