@@ -17,3 +17,11 @@ func main() {
 	fmt.Println(Number([][2]int{{3, 0}, {9, 1}, {4, 10}, {12, 2}, {6, 1}, {7, 10}}))
 	fmt.Println(Number([][2]int{{3, 0}, {9, 1}, {4, 8}, {12, 2}, {6, 1}, {7, 8}}))
 }
+
+// Best Practices
+// func Number(busStops [][2]int) (count int) {
+//   for _, stop := range busStops {
+//     count += stop[0] - stop[1]
+//   }
+//   return
+// }
