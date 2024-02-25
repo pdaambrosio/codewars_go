@@ -4,21 +4,18 @@ import (
 	"fmt"
 )
 
-// The `removeDuplicates` function in Go removes duplicate elements from an integer slice while
-// preserving the order of the original elements.
+
+// The `removeDuplicates` function takes an array of integers and returns a new array with duplicate
+// elements removed while maintaining the original order.
 func removeDuplicates(arr []int) []int {
-    lastIndex := make(map[int]int)
+    validDup := make(map[int]bool)
     result := make([]int, 0)
-
     for i := len(arr) - 1; i >= 0; i-- {
-        if _, ok := lastIndex[arr[i]]; !ok {
-            result = append(result, arr[i])
+        fmt.Println(arr[i], validDup[arr[i]])
+        if !validDup[arr[i]] {
+            validDup[arr[i]] = true
+            result = append([]int{arr[i]}, result...)
         }
-        lastIndex[arr[i]] = i
-    }
-
-    for i, j := 0, len(result)-1; i < j; i, j = i+1, j-1 {
-        result[i], result[j] = result[j], result[i]
     }
 
     return result
