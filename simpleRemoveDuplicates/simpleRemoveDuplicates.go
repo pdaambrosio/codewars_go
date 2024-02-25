@@ -11,7 +11,6 @@ func removeDuplicates(arr []int) []int {
     validDup := make(map[int]bool)
     result := make([]int, 0)
     for i := len(arr) - 1; i >= 0; i-- {
-        fmt.Println(arr[i], validDup[arr[i]])
         if !validDup[arr[i]] {
             validDup[arr[i]] = true
             result = append([]int{arr[i]}, result...)
