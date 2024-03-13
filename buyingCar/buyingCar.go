@@ -51,3 +51,25 @@ func main() {
 
 //   return [2]int{months, int(priceOld + float64(months * savingperMonth) - priceNew + 0.5)}
 // }
+
+// The best solution in codewars:
+// package kata
+
+// import "math"
+
+// func NbMonths(startPriceOld, startPriceNew, savingperMonth int, percentLossByMonth float64) [2]int {
+//     priceDif := float64(startPriceNew - startPriceOld)
+//     months := 0
+    
+//     for float64(savingperMonth * months) < priceDif {
+//         months++
+        
+//         if months % 2 == 0 {
+//              percentLossByMonth += 0.5
+//         }
+        
+//         priceDif *= 1 - percentLossByMonth / 100 
+//     }
+    
+//     return [2]int{months, savingperMonth * months - int(math.Round(priceDif)) }
+// }
