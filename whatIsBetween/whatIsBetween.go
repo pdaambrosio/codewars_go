@@ -4,6 +4,7 @@ import (
 	"fmt"
 )
 
+// The function "Between" generates a slice of integers between two given values.
 func Between(a, b int) []int {
 	var result []int
 
