@@ -8,7 +8,6 @@ import (
 // I don't know how to solve this problem, so I just unlocked and copied the solution from the codewars website;
 // I will try to understand the solution and then write my own solution
 // The solution is from the user "sergrom"
-
 func CountPairsInt(diff, nMax int) int {
     count := 0
     for i := 2; i <= nMax-diff; i++ {
