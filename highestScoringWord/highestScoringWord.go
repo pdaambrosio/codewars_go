@@ -5,7 +5,19 @@ import (
 )
 
 func High(s string) string {
-	//TODO: Implement this function
+	var highestWord string
+	var highestScore int
+
+	words := split(s)
+	for _, word := range words {
+		score := getScore(word)
+		if score > highestScore {
+			highestScore = score
+			highestWord = word
+		}
+	}
+
+	return highestWord
 }
 
 func main() {
