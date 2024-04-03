@@ -2,26 +2,33 @@ package main
 
 import (
 	"fmt"
+	"strings"
 )
 
+// The `High` function takes a string of words, calculates the score of each word based
+// on the sum of character values, and returns the word with the highest score.
 func High(s string) string {
-	var highestWord string
-	var highestScore int
+	words := strings.Split(s, " ")
+	bestScore := 0
+	bestWord := ""
 
-	words := split(s)
 	for _, word := range words {
-		score := getScore(word)
-		if score > highestScore {
-			highestScore = score
-			highestWord = word
+		score := 0
+		for _, char := range word {
+			score += int(char) - 96
+		}
+
+		if score > bestScore {
+			bestScore = score
+			bestWord = word
 		}
 	}
 
-	return highestWord
+	return bestWord
 }
 
 func main() {
-	fmt.Println(High("abad"))
-	fmt.Println(High("taxi"))
-	fmt.Println(High("volcano"))
+	fmt.Println(High("man i need a taxi up to ubud"))
+	fmt.Println(High("what time are we climbing up the volcano"))
+	fmt.Println(High("take me to semynak"))
 }
