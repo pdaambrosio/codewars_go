@@ -6,16 +6,16 @@ import (
 
 // The NbMonths function calculates the number of months needed to save enough money to buy a new item
 // while accounting for depreciation and monthly savings.
-func NbMonths(startPriceOld, startPriceNew, savingperMonth int, percentLossByMonth float64) ([2]int, error) {
+func NbMonths(startPriceOld, startPriceNew, savingperMonth int, percentLossByMonth float64) [2]int {
 	months := 0
 	savings := 0.0
 	priceOld := float64(startPriceOld)
 	priceNew := float64(startPriceNew)
 	loss := percentLossByMonth / 100.0
 
-	for priceOld+float64(savings) < priceNew {
+	for priceOld + float64(savings) < priceNew {
 		months++
-		if months%2 == 0 {
+		if months % 2 == 0 {
 			loss += 0.005
 		}
 
@@ -24,11 +24,7 @@ func NbMonths(startPriceOld, startPriceNew, savingperMonth int, percentLossByMon
 		savings += float64(savingperMonth)
 	}
 
-	if priceOld+float64(savings)-priceNew < 0 {
-		return [2]int{}, fmt.Errorf("not enough savings to buy the item")
-	}
-
-	return [2]int{months, int(priceOld + float64(savings) - priceNew + 0.5)}, nil
+	return [2]int{months, int(priceOld + float64(savings) - priceNew + 0.5)}
 }
 
 func main() {
@@ -46,7 +42,7 @@ func main() {
 //   priceNew := float64(startPriceNew)
 
 //   for ; priceOld + float64(months * savingperMonth) < priceNew; months++ {
-//       if months % 2 == 1 {
+//       if months % 2 == 1 {   
 //         percentLossByMonth += 0.5
 //       }
 //       priceOld -= priceOld * percentLossByMonth / 100.0
@@ -64,16 +60,16 @@ func main() {
 // func NbMonths(startPriceOld, startPriceNew, savingperMonth int, percentLossByMonth float64) [2]int {
 //     priceDif := float64(startPriceNew - startPriceOld)
 //     months := 0
-
+    
 //     for float64(savingperMonth * months) < priceDif {
 //         months++
-
+        
 //         if months % 2 == 0 {
 //              percentLossByMonth += 0.5
 //         }
-
-//         priceDif *= 1 - percentLossByMonth / 100
+        
+//         priceDif *= 1 - percentLossByMonth / 100 
 //     }
-
+    
 //     return [2]int{months, savingperMonth * months - int(math.Round(priceDif)) }
 // }
