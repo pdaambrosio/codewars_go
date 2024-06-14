@@ -2,24 +2,24 @@ package main
 
 import (
 	"fmt"
+	"strings"
 	"unicode"
 )
 
-// The function "ToAlternatingCase" takes a string as input and returns a new string with each
+// ToAlternatingCase takes a string as input and returns a new string with each
 // character converted to its opposite case.
 func ToAlternatingCase(str string) string {
-	var result string
+	var result strings.Builder
 
 	for _, char := range str {
 		if unicode.IsLower(char) {
-			result += string(unicode.ToUpper(char))
+			result.WriteRune(unicode.ToUpper(char))
 		} else {
-			result += string(unicode.ToLower(char))
+			result.WriteRune(unicode.ToLower(char))
 		}
-		
 	}
 
-	return result
+	return result.String()
 }
 
 func main() {
