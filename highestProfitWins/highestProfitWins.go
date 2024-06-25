@@ -27,3 +27,13 @@ func main() {
 	fmt.Println(MinMax([]int{1, 2, -3, 4, 5}))
 	fmt.Println(MinMax([]int{1, 9, 3, 4, -5}))
 }
+
+
+// The best practice solution in Codewars.:
+// package kata
+// import "sort"
+
+// func MinMax(arr []int) [2]int {
+//   sort.Ints(arr)
+//   return [2]int{arr[0], arr[len(arr)-1]}
+// }
